@@ -106,13 +106,12 @@ object ApplicationQuery {
       params: List[NonUniqueFilterParam[_]],
       sorting: Sorting = Sorting.NoSorting,
       wantSubscriptions: Boolean = false,
-      wantSubscriptionFields: Boolean = false,
       wantStateHistory: Boolean = false
     ) extends MultipleApplicationQuery {
 
     def asLogText: String = {
-      s"GeneralOpenEndedApplicationQuery(${params.map(Param.asLogText(_)).mkString(",")}, sort=$sorting${if (wantSubscriptions) ", wantSubscriptions" else ""}${if (wantSubscriptionFields) ", wantSubscriptionFields"
-        else ""}${if (wantStateHistory) ", wantStateHistory" else ""})"
+      s"GeneralOpenEndedApplicationQuery(${params.map(Param.asLogText(_)).mkString(",")}, sort=$sorting${if (wantSubscriptions) ", wantSubscriptions" else ""}${if (wantStateHistory) ", wantStateHistory"
+        else ""})"
     }
   }
 
@@ -168,7 +167,7 @@ object ApplicationQuery {
 
       identifyAnyPagination(validParams)
         .fold[MultipleApplicationQuery]({
-          ApplicationQuery.GeneralOpenEndedApplicationQuery(nonUniqueFilterParam, sorting, wantSubscriptions, wantSubscriptionFields, wantStateHistory)
+          ApplicationQuery.GeneralOpenEndedApplicationQuery(nonUniqueFilterParam, sorting, wantSubscriptions, wantStateHistory)
         })(pagination => {
           ApplicationQuery.PaginatedApplicationQuery(nonUniqueFilterParam, sorting, pagination)
         })

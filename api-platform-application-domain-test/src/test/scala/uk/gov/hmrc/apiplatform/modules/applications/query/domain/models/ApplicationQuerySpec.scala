@@ -183,9 +183,9 @@ class ApplicationQuerySpec extends HmrcSpec with ApplicationWithCollaboratorsFix
       test(
         List(UserIdQP(userIdOne), SortQP(Sorting.NameAscending), WantSubscriptionsQP, WantSubscriptionFieldsQP, WantStateHistoryQP)
       )(
-        GeneralOpenEndedApplicationQuery(List(UserIdQP(userIdOne)), Sorting.NameAscending, true, true, true)
+        GeneralOpenEndedApplicationQuery(List(UserIdQP(userIdOne)), Sorting.NameAscending, true, true)
       )(
-        "GeneralOpenEndedApplicationQuery(UserIdQP(???), sort=NameAscending, wantSubscriptions, wantSubscriptionFields, wantStateHistory)"
+        "GeneralOpenEndedApplicationQuery(UserIdQP(???), sort=NameAscending, wantSubscriptions, wantStateHistory)"
       )
     }
 
@@ -193,7 +193,7 @@ class ApplicationQuerySpec extends HmrcSpec with ApplicationWithCollaboratorsFix
       test(
         List(UserIdQP(userIdOne), SortQP(Sorting.NameAscending), WantStateHistoryQP)
       )(
-        GeneralOpenEndedApplicationQuery(List(UserIdQP(userIdOne)), Sorting.NameAscending, false, false, true)
+        GeneralOpenEndedApplicationQuery(List(UserIdQP(userIdOne)), Sorting.NameAscending, false, true)
       )(
         "GeneralOpenEndedApplicationQuery(UserIdQP(???), sort=NameAscending, wantStateHistory)"
       )
