@@ -93,16 +93,8 @@ class QueryParamsToQueryStringMapSpec extends HmrcSpec with EitherValues with Cl
         )
       )
     }
-    "convert for general query" in {
-      test(
-        GeneralOpenEndedApplicationQuery(List(UserIdQP(userIdOne)), wantSubscriptionFields = true),
-        Map(
-          ParamNames.UserId                 -> Seq(userIdOne.toString()),
-          ParamNames.WantSubscriptionFields -> Seq.empty
-        )
-      )
-    }
   }
+
   "wantStateHistory" should {
     "convert for single query" in {
       test(

@@ -49,9 +49,7 @@ object QueryParamsToQueryStringMap {
   }
 
   private def toQuery(qry: GeneralOpenEndedApplicationQuery): Map[String, Seq[String]] = {
-    paramsFor(qry.params) ++ paramForSorting(qry.sorting) ++ paramForWantSubs(qry.wantSubscriptions) ++ paramForWantSubsFields(
-      qry.wantSubscriptionFields
-    ) ++ paramForWantStateHistory(qry.wantStateHistory)
+    paramsFor(qry.params) ++ paramForSorting(qry.sorting) ++ paramForWantSubs(qry.wantSubscriptions) ++ paramForWantStateHistory(qry.wantStateHistory)
   }
 
   private def toQuery(qry: PaginatedApplicationQuery): Map[String, Seq[String]] = {

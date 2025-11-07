@@ -408,8 +408,7 @@ object QueryParamValidator {
     QueryParamValidator.UserIdsValidator,
     QueryParamValidator.VerificationCodeValidator,
     QueryParamValidator.WantSubscriptionsValidator,
-    // TODO - once implemented
-    // QueryParamValidator.WantSubscriptionFieldsValidator,
+    QueryParamValidator.WantSubscriptionFieldsValidator,
     QueryParamValidator.WantStateHistoryValidator
   )
 
